@@ -9,6 +9,10 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 */
 var numeroSecreto; 
 var contadorIntentos=0;
+var edadJugador;
+var partidasGanadasMayores=0;
+var partidasGanadasMenores=0;
+
 
 function comenzar()
 {
@@ -17,8 +21,10 @@ function comenzar()
     numeroSecreto=Math.floor(Math.random()*(101-1))+1;
     console.log(numeroSecreto);
 
+    edadJugador=document.getElementById("edad").value;
+
     contadorIntentos=0;
-		//alert(numeroSecreto );
+		//alert(numeroSecreto);
 }
 
 function verificar()
@@ -28,7 +34,12 @@ function verificar()
   contadorIntentos++;
   
   if(numeroElegido==numeroSecreto){
-    alert("Usted es un ganador y en solo "+contadorIntentos+" intentos");    
+    alert("Usted es un ganador y en solo "+contadorIntentos+" intentos"); 
+    if(edadJugador>=18){
+      partidasGanadasMayores++;      
+    }else{
+      partidasGanadasMenores++;
+    }   
   }else if(numeroElegido<numeroSecreto){
     alert("Faltó...");
   }else{
