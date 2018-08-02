@@ -1,5 +1,5 @@
 function mostrar() {
-    var nombre;
+    /*var nombre;
     var edad;
     var sexo;
 
@@ -97,16 +97,34 @@ function mostrar() {
     document.write("El nombre del más joven es: " + nombreMasJoven + "<br>");
     document.write("El sexo del más viejo es: " + sexoMasViejo + "<br>");
     document.write("El nombre de la mujer más vieja es: " + nombreMujerMasVieja + "<br>");
+*/
 
+    var nota;
+    var sexo;
+    var acumulador_notas = 0;
+    var promedio;
+    var nota_mas_baja;
 
+    for (var i = 1; i <= 5; i++) {
 
+        nota = prompt("Ingrese la nota");
+        while (nota < 0 || nota > 10) {
+            nota = prompt("Ingrese la nota");
+        }
 
+        sexo = prompt("Ingrese el sexo. m/f");
+        while (sexo != "m" && sexo != "f") {
+            sexo = prompt("Ingrese el sexo nuevamente");
+        }
 
-    /*Bucle FOR:
+        acumulador_notas += nota;
+        if(i==1){
+            nota_mas_baja = nota;
+        } else {
+            
+        }
 
-    for (var i = 0; i < 10; i++) {
-        instrucciones;
     }
-    */
 
+    promedio = acumulador_notas/5;
 }

@@ -6,7 +6,10 @@ function mostrar()
 
     numero = prompt("Ingrese un número");
 
-    for(var i = 2; i <= numero; i+=2){
+    for(var i = 1; i <= numero; i++){
+        if(){
+
+        }
         console.log(i);
         cantidad++;
     }
