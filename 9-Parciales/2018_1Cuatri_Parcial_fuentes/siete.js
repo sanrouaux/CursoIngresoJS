@@ -104,12 +104,16 @@ function mostrar() {
     var acumulador_notas = 0;
     var promedio;
     var nota_mas_baja;
+    var sexo_nota_mas_baja;
+    var contador_varones_aprobados = 0;
 
     for (var i = 1; i <= 5; i++) {
 
         nota = prompt("Ingrese la nota");
+        nota = parseInt(nota);
         while (nota < 0 || nota > 10) {
-            nota = prompt("Ingrese la nota");
+            nota = prompt("Ingrese la nota nuevamente");
+            nota = parseInt(nota);
         }
 
         sexo = prompt("Ingrese el sexo. m/f");
@@ -117,14 +121,32 @@ function mostrar() {
             sexo = prompt("Ingrese el sexo nuevamente");
         }
 
+
         acumulador_notas += nota;
-        if(i==1){
+
+        if (i == 1) {
             nota_mas_baja = nota;
+            sexo_nota_mas_baja = sexo;
         } else {
-            
+            if (nota < nota_mas_baja) {
+                nota_mas_baja = nota;
+                sexo_nota_mas_baja = sexo;
+            }
+
+        }
+
+        if (sexo == "m" && nota >= 6) {
+            contador_varones_aprobados++;
         }
 
     }
 
-    promedio = acumulador_notas/5;
+    promedio = acumulador_notas / 5;
+
+
+    alert("El promedio de todas las notas fue: " + promedio + 
+            "\nLa nota mas baja fue " + nota_mas_baja + 
+            " y el sexo de esa persona es " + sexo_nota_mas_baja + 
+            "\nLa cantidad de varones con 6 o mas fue: " + contador_varones_aprobados);
+
 }
