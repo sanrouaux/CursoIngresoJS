@@ -1,33 +1,33 @@
 function mostrar() 
 {
-	var numero_uno;
-	var numero_dos;
-	var numero_tres;
+	var numero;
 	var mayor;
 	var menor;
 
-	numero_uno = prompt("Ingrese el primer número");
-	numero_uno = parseInt(numero_uno);
-	numero_dos = prompt("Ingrese el segundo número");
-	numero_dos = parseInt(numero_dos);
-	numero_tres = prompt("Ingrese el tercer número");
-	numero_tres = parseInt(numero_tres);
+	numero = prompt("Ingrese el primer numero");
+	numero = parseInt(numero);
+	
+	mayor = numero;
+	menor = numero;
 
+	numero = prompt("Ingrese el segundo numero");
+	numero = parseInt(numero);
 
-	if(numero_uno >= numero_dos && numero_uno >= numero_tres){
-		mayor = numero_uno;
-	} else if (numero_dos >= numero_uno && numero_dos >= numero_tres){
-		mayor = numero_dos;
-	} else {
-		mayor = numero_tres;
+	if(numero > mayor){
+		mayor = numero;
 	}
+	if(numero < menor){
+		menor = numero;
+	}
+	
+	numero = prompt("Ingrese el tercer numero");
+	numero = parseInt(numero);
 
-	if(numero_uno <= numero_dos && numero_uno <= numero_tres){
-		menor = numero_uno;
-	} else if (numero_dos <= numero_uno && numero_dos <= numero_tres){
-		menor = numero_dos;
-	} else {
-		menor = numero_tres;
+	if(numero > mayor){
+		mayor = numero;
+	}
+	if(numero < menor){
+		menor = numero;
 	}
 	
 
